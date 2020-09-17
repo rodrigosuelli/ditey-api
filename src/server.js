@@ -1,5 +1,8 @@
 const express = require('express');
 const cors = require('cors');
+require('dotenv').config();
+
+const PORT = process.env.PORT || 3333;
 
 const jwtAuthRoute = require('./routes/jwtAuthRoute');
 const textsRoute = require('./routes/textsRoute');
@@ -13,4 +16,4 @@ app.use('/api/auth', jwtAuthRoute);
 
 app.use('/api/texts', textsRoute);
 
-app.listen(80);
+app.listen(PORT);
