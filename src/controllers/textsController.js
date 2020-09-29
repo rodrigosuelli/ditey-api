@@ -10,7 +10,6 @@ module.exports = {
 
       res.json(userTexts.rows);
     } catch (err) {
-      console.error(err);
       res.status(500).send('Server error');
     }
   },
@@ -34,7 +33,6 @@ module.exports = {
 
       return res.status(201).send();
     } catch (err) {
-      console.error(err);
       res.status(500).send('Server error');
     }
   },
@@ -51,7 +49,6 @@ module.exports = {
 
       res.status(200).send();
     } catch (err) {
-      console.error(err);
       res.status(500).send('Server error');
     }
   },
@@ -64,7 +61,6 @@ module.exports = {
 
       return res.status(204).send();
     } catch (err) {
-      console.error(err);
       res.status(500).send('Server error');
     }
   },
