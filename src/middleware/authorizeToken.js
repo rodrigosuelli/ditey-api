@@ -35,7 +35,7 @@ module.exports = {
       req.user = verify.user;
       next();
     } catch (err) {
-      res.status(500).send('Server error');
+      res.status(401).json({ msg: 'invalid token' });
     }
   },
 };
