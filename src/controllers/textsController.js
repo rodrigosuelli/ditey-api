@@ -4,7 +4,7 @@ module.exports = {
   async index(req, res) {
     try {
       const userTexts = await pool.query(
-        'SELECT title, content FROM texts t INNER JOIN users u ON t.user_id = u.id WHERE t.user_id = $1 ORDER BY t.id',
+        'SELECT id, title, content FROM texts t INNER JOIN users u ON t.user_id = u.id WHERE t.user_id = $1 ORDER BY t.id',
         [req.user.id]
       );
 
