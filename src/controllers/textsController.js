@@ -26,12 +26,14 @@ module.exports = {
         return res.status(403).send('Limit of 5 texts reached');
       }
 
-      await pool.query(
-        'INSERT INTO texts (title, content, user_id) VALUES ($1, $2, $3)',
+      const newText = await pool.query(
+        'INSERT INTO texts (title, content, user_id) VALUES ($1, $2, $3) RETURNING *',
         ['', '', req.user.id]
       );
 
-      return res.status(201).send();
+      const { id, title, content } = newText.rows[0];
+
+      return res.json({ id, title, content });
     } catch (err) {
       res.status(500).send('Server error');
     }
