@@ -26,7 +26,7 @@ module.exports = {
       }
 
       const newText = await pool.query(
-        'INSERT INTO texts (title, content, user_id) VALUES ($1, $2, $3) RETURNING *',
+        'INSERT INTO texts (title, content, user_id) VALUES ($1, $2, $3) RETURNING id, title, content',
         ['', '', req.user.id]
       );
 
@@ -44,7 +44,7 @@ module.exports = {
 
     try {
       await pool.query(
-        'UPDATE texts SET title = $1, content = $2 WHERE id = $3 RETURNING user_id',
+        'UPDATE texts SET title = $1, content = $2 WHERE id = $3',
         [title, content, textId]
       );
 
