@@ -26,7 +26,7 @@ module.exports = {
       }
 
       const newText = await pool.query(
-        'INSERT INTO texts (title, content, user_id) VALUES ($1, $2, $3) RETURNING *',
+        'INSERT INTO texts (title, content, user_id) VALUES ($1, $2, $3) RETURNING id, title, content',
         ['', '', req.user.id]
       );
 
@@ -43,12 +43,16 @@ module.exports = {
     const { title, content } = req.body;
 
     try {
-      await pool.query(
-        'UPDATE texts SET title = $1, content = $2 WHERE id = $3 RETURNING user_id',
+      const updatedText = await pool.query(
+        'UPDATE texts SET title = $1, content = $2 WHERE id = $3 RETURNING id, title, content',
         [title, content, textId]
       );
 
-      res.status(200).send();
+      res.json({
+        id: updatedText.rows[0].id,
+        title: updatedText.rows[0].title,
+        content: updatedText.rows[0].content,
+      });
     } catch (err) {
       res.status(500).send('Server error');
     }
