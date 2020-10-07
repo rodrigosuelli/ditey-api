@@ -15,7 +15,6 @@ module.exports = {
   },
 
   async create(req, res) {
-    console.log(req.user);
     try {
       const userTexts = await pool.query(
         'SELECT COUNT(*) FROM texts t INNER JOIN users u ON t.user_id = u.id WHERE t.user_id = $1',
