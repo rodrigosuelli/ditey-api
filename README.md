@@ -1,4 +1,4 @@
-# Ditey
+# Ditey-Server
 
 Esse é o back-end da aplicação [ditey-web](https://github.com/rodrigosuelli/ditey-web).
 
