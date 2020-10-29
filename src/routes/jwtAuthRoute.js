@@ -15,6 +15,6 @@ router.post('/login', validateInfo, authController.signinUser);
 
 router.post('/refresh-token', verifyRefreshToken, authController.refreshToken);
 
-router.post('/verify', verifyAccessToken, authController.verify);
+router.get('/verify', verifyAccessToken, authController.verify);
 
 module.exports = router;
