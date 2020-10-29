@@ -82,9 +82,19 @@ $ CREATE TABLE texts(
 );
 ```
 
-Ainda conectado ao banco diteyApi, execute o comando `\dt` para listar as tabelas do banco e ter certeza de que elas foram criadas:
+Ainda conectado ao banco diteyApi, execute o comando abaixo para listar as tabelas do banco e ter certeza de que elas foram criadas:
 
-Saia do psql com o comando `\q` .
+```bash
+# Lista todas as tabelas do banco em que você está conectado
+\dt
+```
+
+Saia do psql com o comando:
+
+```bash
+# Sai do psql e volta ao terminal
+\q
+```
 
 ### Executando o projeto
 
@@ -93,7 +103,7 @@ Saia do psql com o comando `\q` .
 $ cp .env.example .env
 ```
 
-No arquivo `.env` insira sua senha de usuário do postgres na variável PGPASSWORD e verifique se as outras variáveis de ambiente estão de acordo com o seu banco de dados.
+No arquivo `.env` insira sua senha de usuário do postgres na variável `PGPASSWORD` e verifique se as outras variáveis de ambiente estão de acordo com o seu banco de dados.
 
 Finalmente, com todas as dependências instaladas, o banco de dados criado e rodando na porta padrão(5432) e as variáveis de ambiente configuradas, você já pode executar o servidor no modo de desenvolvimento na porta(3333):
 
