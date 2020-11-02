@@ -44,27 +44,27 @@ $ yarn
 
 Crie um banco de dados com o nome `diteyApi`. Para cria-lo você pode usar a cli do PostgreSQL `psql` no seu terminal e executar os comandos abaixo. Ou, se preferir, você pode usar um cliente PostgreSQL como [PgAdmin](https://www.pgadmin.org/) e replicar os comandos abaixo na interface gráfica. Ambos PgAdmin e psql que já vem instalado com o PostgreSQL por padrão.
 
-Para usar a cli `psql` execute o comando abaixo no terminal:
+Para usar a cli `psql` execute o comando abaixo no terminal. Se estiver usando linux, antes de executar o comando você precisará logar na conta de usuário criada pelo PostgreSQL no procedimento de instalação, para fazer isso rode `sudo -i -u postgres` no terminal.
 
 ```bash
 # psql --username=[USERNAME], o username padrão é postgres
 $ psql --username=postgres
 ```
 
-Após inserir sua senha de usuário que será requisitada pelo `psql`, você pode executar os comandos abaixo para criar o banco de dados e as tabelas de texto e usuário:
+Se tudo deu certo você já estará logado no prompt do PostgreSQL `psql`, você pode executar os comandos abaixo para criar o banco de dados e as tabelas de texto e usuário:
 
 ```sql
 # Cria o banco de dados diteyAPi
-$ CREATE DATABASE diteyApi;
+postgres=# CREATE DATABASE diteyApi;
 
 # Se conecta ao banco diteyApi
-$ \c diteyApi
+postgres=# \c diteyApi
 
 # Instala a extensão uuid-ossp no banco, necessária para gerar o UUID do usuário e criar a tabela users
-$ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+postgres=# CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 # Cria tabela de usuários
-$ CREATE TABLE users(
+postgres=# CREATE TABLE users(
   id uuid DEFAULT uuid_generate_v4(),
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
@@ -73,7 +73,7 @@ $ CREATE TABLE users(
 );
 
 # Cria tabela de textos
-$ CREATE TABLE texts(
+postgres=# CREATE TABLE texts(
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
   content TEXT,
@@ -86,14 +86,14 @@ Ainda conectado ao banco diteyApi, execute o comando abaixo para listar as tabel
 
 ```bash
 # Lista todas as tabelas do banco em que você está conectado
-\dt
+postgres=# \dt
 ```
 
 Saia do psql com o comando:
 
 ```bash
 # Sai do psql e volta ao terminal
-\q
+postgres=# \q
 ```
 
 ### Executando o projeto
@@ -101,8 +101,7 @@ Saia do psql com o comando:
 Faça uma copia do arquivo .env.example e a renomeie para .env
 
 ```bash
-# 
-Faz uma copia do arquivo .env.example e renomeia para .env
+# Faz uma copia do arquivo .env.example e renomeia para .env
 
 $ cp .env.example .env
 ```
