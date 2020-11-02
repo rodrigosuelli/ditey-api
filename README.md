@@ -47,8 +47,8 @@ Crie um banco de dados com o nome `diteyApi`. Para cria-lo você pode usar a cli
 Para usar a cli `psql` execute o comando abaixo no terminal. Se estiver usando linux, antes de executar o comando você precisará logar na conta de usuário criada pelo PostgreSQL no procedimento de instalação, para fazer isso rode `sudo -i -u postgres` no terminal.
 
 ```bash
-# psql --username=[USERNAME], o username padrão é postgres
-$ psql --username=postgres
+# Ambos username e db padrão são postgres
+$ psql --username=postgres --dbname=postgres
 ```
 
 Se tudo deu certo você já estará logado no prompt do PostgreSQL `psql`, você pode executar os comandos abaixo para criar o banco de dados e as tabelas de texto e usuário:
