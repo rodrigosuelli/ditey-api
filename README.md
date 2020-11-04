@@ -102,7 +102,6 @@ Faça uma copia do arquivo .env.example e a renomeie para .env
 
 ```bash
 # Faz uma copia do arquivo .env.example e renomeia para .env
-
 $ cp .env.example .env
 ```
 
