@@ -75,8 +75,8 @@ postgres=# CREATE TABLE users(
 # Cria tabela de textos
 postgres=# CREATE TABLE texts(
   id SERIAL PRIMARY KEY,
-  title VARCHAR(255),
-  content TEXT,
+  title VARCHAR(255) NOT NULL,
+  content TEXT NOT NULL,
   user_id UUID,
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -102,7 +102,6 @@ Faça uma copia do arquivo .env.example e a renomeie para .env
 
 ```bash
 # Faz uma copia do arquivo .env.example e renomeia para .env
-
 $ cp .env.example .env
 ```
 
