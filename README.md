@@ -42,7 +42,7 @@ $ yarn
 
 ### Criando o banco de dados
 
-Crie um banco de dados com o nome `diteyApi`. Para cria-lo você pode usar a cli do PostgreSQL `psql` no seu terminal e executar os comandos abaixo. Ou, se preferir, você pode usar um cliente PostgreSQL como [PgAdmin](https://www.pgadmin.org/) e replicar os comandos abaixo na interface gráfica. Ambos PgAdmin e psql que já vem instalado com o PostgreSQL por padrão.
+Crie um banco de dados com o nome `ditey-api`. Para cria-lo você pode usar a cli do PostgreSQL `psql` no seu terminal e executar os comandos abaixo. Ou, se preferir, você pode usar um cliente PostgreSQL como [PgAdmin](https://www.pgadmin.org/) e replicar os comandos abaixo na interface gráfica. Ambos PgAdmin e psql que já vem instalado com o PostgreSQL por padrão.
 
 Para usar a cli `psql` execute o comando abaixo no terminal. Se estiver usando linux, antes de executar o comando você precisará logar na conta de usuário criada pelo PostgreSQL no procedimento de instalação, para fazer isso rode `sudo -i -u postgres` no terminal.
 
@@ -55,10 +55,10 @@ Se tudo deu certo você já estará logado no prompt do PostgreSQL `psql`, você
 
 ```sql
 # Cria o banco de dados diteyAPi
-$ CREATE DATABASE diteyApi;
+$ CREATE DATABASE ditey-api;
 
-# Se conecta ao banco diteyApi
-$ \c diteyApi
+# Se conecta ao banco ditey-api
+$ \c ditey-api
 
 # Instala a extensão uuid-ossp no banco, necessária para gerar o UUID do usuário e criar a tabela users
 $ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
@@ -82,7 +82,7 @@ $ CREATE TABLE texts(
 );
 ```
 
-Ainda conectado ao banco diteyApi, execute o comando abaixo para listar as tabelas do banco e ter certeza de que elas foram criadas:
+Ainda conectado ao banco ditey-api, execute o comando abaixo para listar as tabelas do banco e ter certeza de que elas foram criadas:
 
 ```bash
 # Lista todas as tabelas do banco em que você está conectado
