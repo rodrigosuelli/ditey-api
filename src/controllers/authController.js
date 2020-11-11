@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const pool = require('../db/dbQuery');
+const pool = require('../db/pool');
 
 const {
   generateAccessToken,

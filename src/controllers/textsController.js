@@ -1,4 +1,4 @@
-const pool = require('../db/dbQuery');
+const pool = require('../db/pool');
 
 module.exports = {
   async index(req, res) {
