@@ -54,7 +54,7 @@ $ psql --username=postgres --dbname=postgres
 Se tudo deu certo você já estará logado no prompt do PostgreSQL `psql`, você pode executar os comandos abaixo para criar o banco de dados e as tabelas de texto e usuário:
 
 ```sql
-# Cria o banco de dados diteyAPi
+# Cria o banco de dados ditey_api
 $ CREATE DATABASE ditey_api;
 
 # Se conecta ao banco ditey_api
