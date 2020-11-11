@@ -55,16 +55,16 @@ Se tudo deu certo você já estará logado no prompt do PostgreSQL `psql`, você
 
 ```sql
 # Cria o banco de dados diteyAPi
-postgres=# CREATE DATABASE diteyApi;
+$ CREATE DATABASE diteyApi;
 
 # Se conecta ao banco diteyApi
-postgres=# \c diteyApi
+$ \c diteyApi
 
 # Instala a extensão uuid-ossp no banco, necessária para gerar o UUID do usuário e criar a tabela users
-postgres=# CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+$ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 # Cria tabela de usuários
-postgres=# CREATE TABLE users(
+$ CREATE TABLE users(
   id uuid DEFAULT uuid_generate_v4(),
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
@@ -73,7 +73,7 @@ postgres=# CREATE TABLE users(
 );
 
 # Cria tabela de textos
-postgres=# CREATE TABLE texts(
+$ CREATE TABLE texts(
   id SERIAL PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
   content TEXT NOT NULL,
@@ -86,14 +86,14 @@ Ainda conectado ao banco diteyApi, execute o comando abaixo para listar as tabel
 
 ```bash
 # Lista todas as tabelas do banco em que você está conectado
-postgres=# \dt
+$ \dt
 ```
 
 Saia do psql com o comando:
 
 ```bash
 # Sai do psql e volta ao terminal
-postgres=# \q
+$ \q
 ```
 
 ### Executando o projeto
