@@ -4,7 +4,7 @@ const pool = require('../db/pool');
 const {
   generateAccessToken,
   generateRefreshToken,
-} = require('../utils/generateToken');
+} = require('../helpers/generateToken');
 
 module.exports = {
   async createUser(req, res) {
