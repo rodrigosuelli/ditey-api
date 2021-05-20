@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'https://ditey.vercel.app/',
+    origin: 'https://ditey.vercel.app',
     optionsSuccessStatus: 200,
   })
 );
